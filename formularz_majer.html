@@ -1,119 +1,130 @@
 <!DOCTYPE html>
-      <html lang="pl-PL">
-      <html>
-               <head>
-                     <meta charset="utf-8">
-                   <title>     </title>
-               </head>
-                <body>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dane Komputerowe</title>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz Zgłoszeniowy na Wydarzenie Kulturalne</title>
     <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            font-size: 16px;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 20px;
         }
-        th, td {
-            border: 1px solid black;
+        .formularz {
+            background-color: #ffd1dc; /* Jasny róż */
+            border: 2px solid #ff69b4; /* Różowa ramka */
+            padding: 20px;
+            border-radius: 10px;
+            width: 600px;
+            margin: auto;
+        }
+        h1 {
             text-align: center;
-            padding: 8px;
+            color: #ff1493; /* Ciemniejszy róż */
         }
-        th {
-            background-color: #008080; /* Turkusowe tło */
-            color: white;
+        label {
             font-weight: bold;
         }
-        caption {
-            font-size: 18px;
-            font-weight: bold;
+        .section {
+            margin-bottom: 15px;
+        }
+        .input-group {
             margin-bottom: 10px;
         }
-        tr:nth-child(odd) {
-            background-color: #b3e0ff; /* Jasnoniebieskie */
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
         }
-        tr:nth-child(even) {
-            background-color: #ffffff; /* Białe */
+        input[type="text"], input[type="number"], input[type="email"], select, textarea, input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        td:first-child {
-            font-weight: bold;
-            color: red;
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
         }
-        .aktywny {
-            background-color: #0099cc;
+        button, input[type="submit"], input[type="reset"] {
+            background-color: #ff69b4;
             color: white;
-            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        tfoot td {
-            background-color: #008080; /* Turkusowe tło */
-            color: white;
-            font-weight: bold;
-            text-align: center;
-        }
-        p {
-            font-size: 14px;
-            margin-top: 10px;
+        button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #ff1493;
         }
     </style>
 </head>
 <body>
-    <table>
-        <caption>Dane Komputerowe – Majer Nikodem 2kg1</caption>
-        <thead>
-            <tr>
-                <th>Model karty graficznej</th>
-                <th>Taktowanie bazowe</th>
-                <th>Rozmiar pamięci</th>
-                <th>Szyna pamięci</th>
-                <th>Typ Chłodzenia</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>RTX 3070</td>
-                <td>1500 MHz</td>
-                <td>8 GB</td>
-                <td>256-bit</td>
-                <td class="aktywny" rowspan="6">Aktywne</td>
-            </tr>
-            <tr>
-                <td>RTX 3080</td>
-                <td>1440 MHz</td>
-                <td>10 GB</td>
-                <td>320-bit</td>
-            </tr>
-            <tr>
-                <td>GTX 1660 Ti</td>
-                <td>1500 MHz</td>
-                <td>6 GB</td>
-                <td>192-bit</td>
-            </tr>
-            <tr>
-                <td>Radeon RX 6700 XT</td>
-                <td>2321 MHz</td>
-                <td>12 GB</td>
-                <td>192-bit</td>
-            </tr>
-            <tr>
-                <td>Radeon RX 5600 XT</td>
-                <td>1375 MHz</td>
-                <td>6 GB</td>
-                <td>192-bit</td>
-            </tr>
-            <tr>
-                <td>RTX 4090</td>
-                <td>2235 MHz</td>
-                <td>24 GB</td>
-                <td>384-bit</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="5">Dane komputerowe</td>
-            </tr>
-        </tfoot>
-    </table>
-    <p>Źródło: własne</p><br>
-<A HREF="index.html"> wróć </A>
-                </body>
-       </html>
+    <div class="formularz">
+        <h1>Formularz Zgłoszeniowy na Wydarzenie Kulturalne</h1>
+        <form action="mailto:mkryniew@ids.gda.pl" method="post" enctype="text/plain">
+            <!-- Obszar wprowadzania większej ilości tekstu -->
+            <div class="section">
+                <label for="opis">Dlaczego chcesz wziąć udział w wydarzeniu?</label>
+                <textarea id="opis" name="opis" rows="5" placeholder="Tutaj wpisz swoją odpowiedź..."></textarea>
+            </div>
+
+            <!-- Trzy sekcje INPUT radio -->
+            <div class="section">
+                <p>Wybierz preferowany typ wydarzenia:</p>
+                <label><input type="radio" name="typ" value="Koncert" checked> Koncert</label>
+                <label><input type="radio" name="typ" value="Wystawa"> Wystawa</label>
+                <label><input type="radio" name="typ" value="Spektakl"> Spektakl</label>
+                <label><input type="radio" name="typ" value="Warsztaty"> Warsztaty</label>
+            </div>
+            <div class="section">
+                <p>Preferowany czas uczestnictwa:</p>
+                <label><input type="radio" name="czas" value="Rano"> Rano</label><br>
+                <label><input type="radio" name="czas" value="Popołudnie"> Popołudnie</label><br>
+                <label><input type="radio" name="czas" value="Wieczór"> Wieczór</label>
+            </div>
+
+            <!-- Trzy sekcje INPUT checkbox -->
+            <div class="section">
+                <p>Wybierz swoje zainteresowania:</p>
+                <label><input type="checkbox" name="zainteresowania" value="Muzyka"> Muzyka</label><br>
+                <label><input type="checkbox" name="zainteresowania" value="Sztuka"> Sztuka</label><br>
+                <label><input type="checkbox" name="zainteresowania" value="Teatr"> Teatr</label><br>
+                <label><input type="checkbox" name="zainteresowania" value="Fotografia"> Fotografia</label>
+            </div>
+
+            <!-- Pięć pól tekstowych INPUT -->
+            <div class="section">
+                <label for="imie">Imię:</label>
+                <input type="text" id="imie" name="imie" placeholder="Wpisz swoje imię">
+                
+                <label for="email">Adres e-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Wpisz swój e-mail">
+                
+                <label for="telefon">Numer telefonu (max. 9 cyfr):</label>
+                <input type="text" id="telefon" name="telefon" maxlength="9">
+                
+                <label for="wiek">Wiek:</label>
+                <input type="number" id="wiek" name="wiek" placeholder="Wpisz swój wiek">
+            </div>
+
+            <!-- Listy rozwijalne SELECT -->
+            <div class="section">
+                <label for="miasto">Wybierz miasto wydarzenia:</label>
+                <select id="miasto" name="miasto">
+                    <option value="Warszawa" selected>Warszawa</option>
+                    <option value="Kraków">Kraków</option>
+                    <option value="Gdańsk">Gdańsk</option>
+                    <option value="Wrocław">Wrocław</option>
+                    <option value="Poznań">Poznań</option>
+                </select>
+            </div>
+
+            <!-- Przyciski wysyłania i czyszczenia -->
+            <div class="section">
+                <input type="submit" value="WYŚLIJ">
+                <input type="reset" value="CZYŚĆ">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
